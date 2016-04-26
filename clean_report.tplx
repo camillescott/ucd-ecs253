@@ -1,5 +1,5 @@
 % jupyter nbconvert --to pdf HW0.ipynb --template clean_report.tplx
-((*- extends 'report.tplx' -*))
+((*- extends 'article.tplx' -*))
 
 % Author info
 ((* block author *))
@@ -9,15 +9,3 @@
 }
 ((* endblock author *))
 
-% Adding some LaTeX magic in abstract block to hide the stuff like "Chapter 1"
-% http://nbconvert.readthedocs.org/en/latest/customizing.html
-((* block abstract *))
-\makeatletter
-\def\@makechapterhead#1{
-  {\parindent \z@ \raggedright \normalfont
-    \interlinepenalty\@M
-    \Huge \bfseries #1\par\nobreak
-  }
-}
-\makeatother
-((* endblock abstract *))
